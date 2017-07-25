@@ -136,9 +136,8 @@ const reducer2 = (state  = INIT_STATE, action) => {
 	}
 }
 const combineReducer = combineReducers({
-	increase,
-	decrease,
-	itemData,
+	reducer1,
+	reducer2,
 })
 
 const store = createStore(combineReducer)

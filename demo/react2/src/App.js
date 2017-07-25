@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 import BtnAdd from './modules/BtnAdd'
 import InputArea from './modules/InputArea'
+import { connect } from 'react-redux'
 
 class App extends Component {
   render() {
+    var {name} = this.props
     return (
       <div className="App">
         <p className="App-intro">
-          hello react test demo!
+          {name.name}
         </p>
         <InputArea />
         <BtnAdd />
@@ -17,4 +19,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export default  connect((state)=>{
+  return {
+    name:state.name
+  }
+})(App);

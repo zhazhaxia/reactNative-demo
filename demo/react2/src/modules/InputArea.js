@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 class InputArea extends Component {
 	constructor(props){
@@ -6,24 +7,27 @@ class InputArea extends Component {
 		console.log('InputArea constructor...')
 		this.change = this.change.bind(this)
 		this.state = {
-			val : 'hello'
+			name : 'hello',
 		}
 	}
 	componentDidMount(){
 	}
 	change(e){
-		this.setState({
-			val : e.target.value
-		})
+		var self = this
+		this.props.dispatch({type:'name',name:e.target.value})
 	}
 	render() {
-		var val = this.state.val
+		var {name} = this.props
 		return (
 		  	<div>
-		  		<input value={val} onChange={(e)=>this.change(e)} />
+		  		name:<input value={name.name} onChange={(e)=>this.change(e)} /><br/>
 		  	</div>
 		);
 	}
 }
 
-export default InputArea;
+export default connect((state)=>{
+  return {
+  	name:state.name
+  }
+})(InputArea);;
