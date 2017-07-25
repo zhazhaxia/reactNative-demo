@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/demo/react1/node_modules
 
 # testing
 /coverage
