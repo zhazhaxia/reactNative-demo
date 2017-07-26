@@ -156,4 +156,4 @@ const store = createStore(combineReducer)
 
 以上就是redux的基本使用，下篇介绍react-redux的使用。
 
-传送门[react-redux十分钟入门https://github.com/zhazhaxia/reactNative-demo/master/demo/react2/README.md](https://github.com/zhazhaxia/reactNative-demo/edit/master/demo/react1/README.md)
+传送门[react-redux十分钟入门https://github.com/zhazhaxia/reactNative-demo/blob/master/demo/react2/README.md](https://github.com/zhazhaxia/reactNative-demo/blob/master/demo/react2/README.md)
