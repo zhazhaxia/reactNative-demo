@@ -1,5 +1,7 @@
 # redux 十分钟入门
 
+> 世间哪有十分钟就入门的好东西。。。不过这篇是本人入门的时候看了许多篇自己总结的结晶，虽然里面有很多文字描述都不对，但是程序还是可以跑起来的。有任何疑问，直接来找我吧。
+
 准备工作
 
 - 安装react构建工具 `npm install create-react-app -g`
@@ -147,15 +149,7 @@ const store = createStore(combineReducer)
 
 可以把所有reducers放在一个目录下，统一用一个reducers目录管理，然后用统一导出。
 
+===
 
-
-
-
-
-
-
-
-
-
-
-以上就是redux的基本使用，下篇介绍react-redux的使用
+以上就是redux的基本使用，下篇介绍react-redux的使用。
+传送门[react-redux十分钟入门https://github.com/zhazhaxia/reactNative-demo/edit/master/demo/react1/README.md](https://github.com/zhazhaxia/reactNative-demo/edit/master/demo/react1/README.md)
