@@ -1,6 +1,6 @@
 # react-redux 十分钟入门
 
-上篇介绍了redux的入门使用，本文继续深入对redux的学习
+上篇介绍了[redux的入门使用](https://github.com/zhazhaxia/reactNative-demo/blob/master/demo/react1/README.md)，本文继续深入对redux的学习
 
 ## 大型复杂程序之间的组件通信
 
