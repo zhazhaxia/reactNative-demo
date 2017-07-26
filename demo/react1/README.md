@@ -118,7 +118,7 @@ const INIT_STATE = {
 	name : 'milu',
 	age : '23'
 }
-//reducer 任务
+//多个reducer 任务
 const reducer1 = (state  = INIT_STATE, action) => {
 	switch (action.type) {
 		case 'name':
@@ -139,19 +139,20 @@ const reducer2 = (state  = INIT_STATE, action) => {
 			break;
 	}
 }
+//组合多个reducers
 const combineReducer = combineReducers({
 	reducer1,
 	reducer2,
 })
-
+//生成容器
 const store = createStore(combineReducer)
 
-
+//可以进行逻辑使用了
 ```
 
 可以把所有reducers放在一个目录下，统一用一个reducers目录管理，然后用统一导出。
 
-===
+---
 
 以上就是redux的基本使用，下篇介绍react-redux的使用。
 传送门[react-redux十分钟入门https://github.com/zhazhaxia/reactNative-demo/edit/master/demo/react1/README.md](https://github.com/zhazhaxia/reactNative-demo/edit/master/demo/react1/README.md)
