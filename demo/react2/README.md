@@ -55,12 +55,11 @@ registerServiceWorker();
 
 ```
 - 入口声明分三步
-
-        - 引入redux、react-redux模块
+  - 引入redux、react-redux模块
 	
-        - 根据reducers生成容器store
+      - 根据reducers生成容器store
 	
-        - 目标程序入口包装<Provider /> 并传入容器store
+      - 目标程序入口包装<Provider /> 并传入容器store
 
 页面入口程序用<Provider />对整个应用进行声明，这样所有在<App />下的组件就可以相互通信了。下面介绍组件之间如何相互通信。
 
