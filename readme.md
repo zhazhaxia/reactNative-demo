@@ -6,4 +6,6 @@
 
 - [react native 支持的css写法](https://github.com/zhazhaxia/reactNative-demo/blob/master/docs/rn-css.md)
 
+- [react native web滚动性能优化](https://github.com/zhazhaxia/reactNative-demo/blob/master/docs/rnweboptimise.md)
+
 
