@@ -2,7 +2,7 @@ let isMount = true;
 let workInProgressHook = null;
 
 const fiber = {
-  stateNode: AudioParamMap,
+  stateNode: App,
   memoizedState: null
 }
 
