@@ -1,4 +1,4 @@
-### rn 的一些练习例子 与 文章笔记
+### react文章笔记
 
 - [redux十分钟入门](https://github.com/zhazhaxia/reactNative-demo/blob/master/demo/react1/README.md)
 
