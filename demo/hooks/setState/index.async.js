@@ -35,8 +35,6 @@ function useState(initialState) {
     workInProgressHook = workInProgressHook.next;
   }
 
-  console.log("hook:",hook)
-  console.log("workInProgressHook:",workInProgressHook)
   let baseState = hook.memoizedState;
 
   if (hook.queue.pending) {
@@ -44,7 +42,7 @@ function useState(initialState) {
 
     do {
       const action = firstUpdate.action;
-      baseState = typeof action === 'function' ?action(baseState) : action;
+      baseState = action(baseState);
       firstUpdate = firstUpdate.next;
     } while (firstUpdate !== hook.queue.pending.next)
 
@@ -100,29 +98,23 @@ function schedule() {
 }
 
 function App() {
-  const [num, setNum] = useState(0);
-  const [num22, setNum22] = useState(0);
-  const [name, setName] = useState('milu');
+  const [num, updateNum] = useState(0);
+  const [num22, updateNum22] = useState(0);
 
   console.log('isMount?', isMount);
   console.log('num:', num)
   console.log('num22:', num22)
-  console.log('name:', name)
-
 
 
   return {
     onClick() {
-      setNum(num => num + 1)
-      setNum(num => num + 2)
-      setNum(num => num + 3)
+      updateNum(num => num + 1)
+      updateNum(num => num + 2)
+      updateNum(num => num + 3)
       // updateNum22(num => num + 10)
     },
     onFocus() {
-      setNum22(num => num + 10)
-    },
-    onBlur(){
-      setName('yaxiji')
+      updateNum22(num => num + 10)
     }
   }
 }
