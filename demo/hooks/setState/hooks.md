@@ -424,6 +424,8 @@ function dispatchAction(queue, action) {
 
 源码地址：https://github.com/zhazhaxia/reactNative-demo/blob/master/demo/hooks/setState/index.js
 
+这里只介绍了useState()的实现，后续继续介绍其他hooks的实现
+
 ## 参考文献
 
 React技术揭秘  https://react.iamkasong.com/hooks/create.html
