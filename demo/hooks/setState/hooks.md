@@ -3,8 +3,11 @@
 
 > 网上已经有很多相关`React Hooks`源码和原理的介绍，都写的非常优秀。这里笔者再`“多此一举”“滥竽充数”`写多一篇个人在学习`React Hooks`源码和原理后的理解，希望这里写的尽量更简洁简单一些，让读者更方便更快速理解`React Hooks`的原理。如果能够帮助到一些读者理解就更好了。
 >
+> 
 
 ![react](https://kg.qq.com/gtimg/music/common/upload/image/R40BQUSMXPX5NEBA1POVOO.png)
+
+
 
 本篇只介绍`useState()`，其他的`hooks`相信在理解`useState()`，很容易触类旁通。
 
@@ -79,7 +82,11 @@ Button用了两个状态count1,count2。那么对应的`memoizedState`结构就�
 
 `memoizedState -> hooks1 -> hooks2 -> null`
 
+
+
 ![hooks](https://kg.qq.com/gtimg/music/common/upload/image/R40BQUSMXPX5NEBA1POWG0.png?a)
+
+
 
 那么hooks是怎么样的结构？
 
@@ -178,7 +185,11 @@ function useState(initailState){
 
 所以`workInProgressHook`的作用是：按hook调用顺序保存最新的hook。用图示理解：
 
+
+
 ![hook链表结构](https://kg.qq.com/gtimg/music/common/upload/image/R40BQUSMXPX5NEBA1POUXC.png)
+
+
 
 
 
@@ -315,9 +326,21 @@ function dispatchAction(queue, action) {
 - 解释下 `queue `的作用，因为这里用户可以执行多次 `setState() `，比如这里多次执行 `setCount() `，多个状态放到链表，按顺序执行，直到更新完 `queue `。
 
 - 补充下第3步的图例，因为这里 `queue.pengding `是一个循环链表，所以当只有一个的时候，只能自己指向自己，构成一个环。
+    
+    
+    
     ![单个节点](https://kg.qq.com/gtimg/music/common/upload/image/R40BQUSMXPX5NEBA1POV46.png?a=1)
+    
+    
+    
 - 补充下第4步的图例说明
+    
+    
+    
     ![update](https://kg.qq.com/gtimg/music/common/upload/image/R40BQUSMXPX5NEBA1POVB0.png)
+    
+    
+    
 - 是不是还有一个疑问，为什么 `queue.pending `对应最新的更新节点？这里后面会解释。
 
 既然状态更新的链表结构生成了，那么怎么样让每次 `setState `的值更新到组件里面呢？
@@ -361,7 +384,10 @@ function useState(initailState){
 
 可以得出一个结论，这里hook的状态更新是根据执行顺序确定的。即假设有三个update，那么更新顺序为  `update1 -> update2 -> update3 `
 对应图例为
-    ![update](https://kg.qq.com/gtimg/music/common/upload/image/R40BQUSMXPX5NEBA1POVHU.png)
+
+​    ![update](https://kg.qq.com/gtimg/music/common/upload/image/R40BQUSMXPX5NEBA1POVHU.png)
+
+
 
 那么我们还剩下一个问题，在 `setState() `后，怎么调用更新组件的？
 
