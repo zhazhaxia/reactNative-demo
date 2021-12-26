@@ -339,3 +339,5 @@ function dispatchAction(queue, action) {
 显然，这里有个问题，以上所有代码是同步的，意味着每次setState()都会重新执行render()，这样性能会很差，我们可以简单模拟下调度，在渲染之前加个Promise()或者setTimeout()来模拟，至于怎么写，可以思考下。
 
 #### 最后的总结
+
+
