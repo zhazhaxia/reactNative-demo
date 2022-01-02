@@ -82,6 +82,10 @@ function schedule(){
 function App(){
   const [ count, setCount ] = useState(0)
 
+  // useEffect(()=>{},[])
+  // useMemo(()=>{},[])
+  // useCallback(()=>{},[])
+
   console.log('count:',count)
   return {
     onclick(){
